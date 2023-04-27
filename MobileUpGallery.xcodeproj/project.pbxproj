@@ -46,7 +46,6 @@
 			children = (
 				D7BA106829FA5E2700C2A233 /* README.md */,
 				D7BA105129FA5C0D00C2A233 /* MobileUpGallery */,
-				D7BA106629FA5E1400C2A233 /* .gitinore */,
 				D7BA105029FA5C0D00C2A233 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +68,7 @@
 				D7BA105B29FA5C1000C2A233 /* Assets.xcassets */,
 				D7BA105D29FA5C1000C2A233 /* LaunchScreen.storyboard */,
 				D7BA106029FA5C1000C2A233 /* Info.plist */,
+				D7BA106629FA5E1400C2A233 /* .gitinore */,
 			);
 			path = MobileUpGallery;
 			sourceTree = "<group>";
