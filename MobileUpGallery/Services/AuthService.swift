@@ -36,18 +36,14 @@ final class AuthService {
 
 			switch result {
 				case .success(let user):
-					// CHECK TOKEN, PUSH GALLERY
 
 					if Date.now >= user.tokenExpiringDate {
-						// make Auth
 						self.coordinator?.presentLoginView()
-
 					} else {
 						self.coordinator?.presentGallery(for: user)
 					}
 
 				case .failure:
-					//Go to LoginView
 					self.coordinator?.presentLoginView()
 			}
 		}
