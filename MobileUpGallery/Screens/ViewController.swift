@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import SnapKit
 
-class ViewController: UIViewController {
+class LoginVC: UIViewController, Coordinating {
+
+	var coordinator: Coordinator?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+
 	}
 
 
