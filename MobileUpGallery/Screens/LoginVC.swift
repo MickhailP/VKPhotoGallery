@@ -12,7 +12,7 @@ final class LoginVC: UIViewController, Coordinating {
 
 	var coordinator: Coordinator?
 
-	let loginButton = MUButton(backgroundColor: .black, title: ButtonLabels.loginButton.rawValue)
+	let loginButton = MUButton(backgroundColor: UIColor(named: "loginButtonColor") ?? .black, title: ButtonLabels.loginButton.rawValue)
 	let titleLabel = MUTitleLabel(textAlignment: .left, fontSize: 44)
 
 
@@ -44,7 +44,6 @@ final class LoginVC: UIViewController, Coordinating {
 		view.addSubview(titleLabel)
 		titleLabel.text = "Mobile Up Gallery"
 
-
 		titleLabel.snp.makeConstraints { make in
 			make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(LoginViewTitlePaddings.top)
 			make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(LoginViewTitlePaddings.leading)
@@ -56,7 +55,7 @@ final class LoginVC: UIViewController, Coordinating {
 	private func configureLoginButton() {
 		view.addSubview(loginButton)
 		loginButton.translatesAutoresizingMaskIntoConstraints = false
-
+		loginButton.setTitleColor(UIColor(named: "loginTitleColor"), for: .normal) 
 		loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
 
 		let padding: CGFloat = 14

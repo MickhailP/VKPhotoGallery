@@ -40,12 +40,15 @@ final class MainCoordinator: Coordinator {
 
 
 	func presentLoginView() {
-
+		let vc = LoginVC(coordinator: self)
+		navigationController.pushViewController(vc, animated: false)
 	}
 
 
 	func presentWebView() {
-
+		let destVC = WebViewVC(authService: AuthService(), coordinator: self)
+		let navController = UINavigationController(rootViewController: destVC)
+		navigationController.present(navController, animated: true)
 	}
 
 
