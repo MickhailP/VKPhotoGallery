@@ -20,10 +20,10 @@ class MUTitleLabel: UILabel {
 	}
 
 
-	convenience init(textAlignment: NSTextAlignment, fontSize: UIFont.TextStyle) {
+	convenience init(textAlignment: NSTextAlignment, fontSize: CGFloat) {
 		self.init(frame: .zero)
 		self.textAlignment = textAlignment
-		self.font = UIFont.preferredFont(forTextStyle: fontSize)
+		self.font = UIFont.systemFont(ofSize: fontSize, weight: .bold)
 	}
 
 
@@ -31,7 +31,9 @@ class MUTitleLabel: UILabel {
 		textColor = .label
 		adjustsFontSizeToFitWidth = true
 		minimumScaleFactor = 0.9
-		lineBreakMode = .byTruncatingTail //WORD WRAPPING
+		lineBreakMode = .byWordWrapping
 		translatesAutoresizingMaskIntoConstraints = false
+		numberOfLines = 0
 	}
 }
+
