@@ -20,6 +20,9 @@
 		D71E248429FBDAF30049A157 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E248329FBDAF30049A157 /* ErrorMessage.swift */; };
 		D71E248729FBE6AD0049A157 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E248529FBE6AC0049A157 /* KeychainWrapper.swift */; };
 		D71E248829FBE6AD0049A157 /* KeychainAccessibillity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E248629FBE6AC0049A157 /* KeychainAccessibillity.swift */; };
+		D74993AE29FBFA3C0091D507 /* MUAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993AD29FBFA3C0091D507 /* MUAlertVC.swift */; };
+		D74993B129FBFABE0091D507 /* MUAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B029FBFABE0091D507 /* MUAlertContainerView.swift */; };
+		D74993B329FBFB0A0091D507 /* MUBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B229FBFB0A0091D507 /* MUBodyLabel.swift */; };
 		D7BA105329FA5C0D00C2A233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105229FA5C0D00C2A233 /* AppDelegate.swift */; };
 		D7BA105529FA5C0D00C2A233 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105429FA5C0D00C2A233 /* SceneDelegate.swift */; };
 		D7BA105729FA5C0D00C2A233 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105629FA5C0D00C2A233 /* LoginVC.swift */; };
@@ -42,6 +45,9 @@
 		D71E248329FBDAF30049A157 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		D71E248529FBE6AC0049A157 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		D71E248629FBE6AC0049A157 /* KeychainAccessibillity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainAccessibillity.swift; sourceTree = "<group>"; };
+		D74993AD29FBFA3C0091D507 /* MUAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUAlertVC.swift; sourceTree = "<group>"; };
+		D74993B029FBFABE0091D507 /* MUAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUAlertContainerView.swift; sourceTree = "<group>"; };
+		D74993B229FBFB0A0091D507 /* MUBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUBodyLabel.swift; sourceTree = "<group>"; };
 		D7BA104F29FA5C0D00C2A233 /* MobileUpGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileUpGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BA105229FA5C0D00C2A233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7BA105429FA5C0D00C2A233 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +136,8 @@
 		D71E247229FBB5D50049A157 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				D74993AF29FBFA930091D507 /* Views */,
+				D74993AC29FBFA250091D507 /* ViewControllers */,
 				D71E247629FBB6720049A157 /* Labels */,
 				D71E247529FBB6660049A157 /* Buttons */,
 			);
@@ -148,17 +156,18 @@
 			isa = PBXGroup;
 			children = (
 				D71E247929FBB6A60049A157 /* MUTitleLabel.swift */,
+				D74993B229FBFB0A0091D507 /* MUBodyLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
 		};
-		D71E247B29FBBAA10049A157 /* Constants */ = {
+		D71E247B29FBBAA10049A157 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				D71E247C29FBBABD0049A157 /* Constants.swift */,
 				D71E248329FBDAF30049A157 /* ErrorMessage.swift */,
 			);
-			path = Constants;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		D71E248229FBD6900049A157 /* WebViewView */ = {
@@ -168,6 +177,22 @@
 				D71E248029FBD6810049A157 /* WebViewViewModel.swift */,
 			);
 			path = WebViewView;
+			sourceTree = "<group>";
+		};
+		D74993AC29FBFA250091D507 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D74993AD29FBFA3C0091D507 /* MUAlertVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D74993AF29FBFA930091D507 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D74993B029FBFABE0091D507 /* MUAlertContainerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D7BA104629FA5C0D00C2A233 = {
@@ -198,7 +223,7 @@
 				D71E246329FA65E00049A157 /* Services */,
 				D71E246D29FA69070049A157 /* Managers */,
 				D71E246729FA66D70049A157 /* Models */,
-				D71E247B29FBBAA10049A157 /* Constants */,
+				D71E247B29FBBAA10049A157 /* Utilities */,
 				D7BA106629FA5E1400C2A233 /* .gitinore */,
 			);
 			path = MobileUpGallery;
@@ -292,9 +317,12 @@
 				D71E247D29FBBABD0049A157 /* Constants.swift in Sources */,
 				D7BA105529FA5C0D00C2A233 /* SceneDelegate.swift in Sources */,
 				D71E248429FBDAF30049A157 /* ErrorMessage.swift in Sources */,
+				D74993B329FBFB0A0091D507 /* MUBodyLabel.swift in Sources */,
 				D71E246929FA66EF0049A157 /* User.swift in Sources */,
+				D74993B129FBFABE0091D507 /* MUAlertContainerView.swift in Sources */,
 				D71E248829FBE6AD0049A157 /* KeychainAccessibillity.swift in Sources */,
 				D71E246629FA66710049A157 /* AuthService.swift in Sources */,
+				D74993AE29FBFA3C0091D507 /* MUAlertVC.swift in Sources */,
 				D71E248129FBD6810049A157 /* WebViewViewModel.swift in Sources */,
 				D71E247429FBB60A0049A157 /* MUButton.swift in Sources */,
 			);

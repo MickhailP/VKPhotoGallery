@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 import SnapKit
 
-class WebViewVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
+final class WebViewVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
 	var webView: WKWebView!
 	let viewModel: WebViewViewModel
