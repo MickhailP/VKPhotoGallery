@@ -23,3 +23,8 @@ struct LoginViewTitlePaddings {
 struct ViewSize {
 	static let buttonHeight = 52
 }
+
+struct KeychainKeys {
+	static let userKey = "USER"
+}
+

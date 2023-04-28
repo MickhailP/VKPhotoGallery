@@ -49,9 +49,14 @@ class WebViewVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
 		webView.translatesAutoresizingMaskIntoConstraints = false
 		self.view.addSubview(webView)
 
+
 		webView.snp.makeConstraints { make in
-			make.top.bottom.leading.trailing.equalToSuperview()
+			make.top.equalTo(view.snp.top).offset(0)
+			make.bottom.equalTo(view.snp.bottom).inset(0)
+			make.leading.equalTo(view.snp.leading).inset(0)
+			make.trailing.equalTo(view.snp.trailing).offset(0)
 		}
+
 	}
 
 
@@ -66,6 +71,7 @@ class WebViewVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
 		dismiss(animated: true)
 		do {
 			try viewModel.showGalleryView()
+			// SHOW Success message
 		} catch  {
 			//SHOW ALERT
 			print("ERROR")
@@ -81,10 +87,13 @@ extension WebViewVC {
 		guard let redirectURL = webView.url else { return }
 		print(redirectURL)
 
-		if viewModel.authService.checkIsAuthorisationFinished(for: redirectURL) {
+		do {
+			try viewModel.authService.checkIsAuthorisationFinished(for: redirectURL)
 			DispatchQueue.main.async {
 				webView.stopLoading()
 			}
+		} catch  {
+			// Show alert
 		}
 	}
 }

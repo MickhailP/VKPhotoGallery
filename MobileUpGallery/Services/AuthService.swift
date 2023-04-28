@@ -19,6 +19,7 @@ final class AuthService {
 
 	weak var coordinator: MainCoordinator?
 	var activeUser: User?
+	var isAuthenticated = false
 
 	let authURL = "https://oauth.vk.com/authorize?client_id=\(VKAppID.identifier)&display=mobile&redirect_uri=https://oauth.vk.com/blank.html&response_type=token&v=5.131"
 
@@ -50,20 +51,22 @@ final class AuthService {
 	}
 
 
-	func checkIsAuthorisationFinished(for url: URL) -> Bool {
+	func checkIsAuthorisationFinished(for url: URL) throws  {
 
 		let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+
 		if let components = components {
 			if components.path == "/blank.html" {
-				getUserDataFrom(url: url)
-				return true
+				try getUserDataFrom(url: url)
+			} else {
+				throw ErrorMessage.invalidResponse
 			}
 		}
-		return false
+		throw ErrorMessage.authorisationError
 	}
 
 
-	private func getUserDataFrom(url: URL) {
+	private func getUserDataFrom(url: URL) throws {
 
 		var components = URLComponents()
 		components.query = url.fragment
@@ -75,16 +78,28 @@ final class AuthService {
 			let expiresIn = items.first { $0.name == "expires_in"}?.value
 
 
-			guard let expiresIn else { return }
-			guard let seconds = Double(expiresIn) else { return }
+			guard let expiresIn else {
+				throw ErrorMessage.invalidResponse
+			}
+
+			guard let seconds = Double(expiresIn) else {
+				throw ErrorMessage.invalidResponse
+			}
+
 			let date = Date.now.addingTimeInterval(seconds)
 
 			if let userID, let accessToken {
 				let user = User(userID: userID, accessToken: accessToken, tokenExpiringDate: date)
 
-				KeychainManager.save(user: user)
+				if KeychainManager.save(user: user) != nil  {
+					throw ErrorMessage.activeUserMissing
+				}
 				activeUser = user
+			} else {
+				throw ErrorMessage.invalidResponse
 			}
+		} else {
+			throw ErrorMessage.invalidResponse
 		}
 	}
 }
