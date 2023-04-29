@@ -24,6 +24,16 @@
 		D74993B129FBFABE0091D507 /* MUAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B029FBFABE0091D507 /* MUAlertContainerView.swift */; };
 		D74993B329FBFB0A0091D507 /* MUBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B229FBFB0A0091D507 /* MUBodyLabel.swift */; };
 		D74993B629FBFC610091D507 /* UIVIewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B529FBFC610091D507 /* UIVIewControllerExtension.swift */; };
+		D74993BB29FD05E80091D507 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993BA29FD05E80091D507 /* NetworkingManager.swift */; };
+		D74993BD29FD06280091D507 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993BC29FD06280091D507 /* NetworkingError.swift */; };
+		D74993BF29FD072A0091D507 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993BE29FD072A0091D507 /* Endpoints.swift */; };
+		D74993C129FD07E60091D507 /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993C029FD07E60091D507 /* PhotoResponse.swift */; };
+		D74993C329FD08580091D507 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993C229FD08580091D507 /* GalleryVC.swift */; };
+		D74993C529FD088F0091D507 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993C429FD088F0091D507 /* Photo.swift */; };
+		D74993C729FD08C70091D507 /* GalleryVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993C629FD08C70091D507 /* GalleryVCViewModel.swift */; };
+		D74993C929FD14400091D507 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993C829FD14400091D507 /* UIHelper.swift */; };
+		D74993CC29FD15EE0091D507 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993CB29FD15EE0091D507 /* PhotoCell.swift */; };
+		D74993CF29FD175C0091D507 /* MUImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993CE29FD175C0091D507 /* MUImageView.swift */; };
 		D7BA105329FA5C0D00C2A233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105229FA5C0D00C2A233 /* AppDelegate.swift */; };
 		D7BA105529FA5C0D00C2A233 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105429FA5C0D00C2A233 /* SceneDelegate.swift */; };
 		D7BA105729FA5C0D00C2A233 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105629FA5C0D00C2A233 /* LoginVC.swift */; };
@@ -50,6 +60,16 @@
 		D74993B029FBFABE0091D507 /* MUAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUAlertContainerView.swift; sourceTree = "<group>"; };
 		D74993B229FBFB0A0091D507 /* MUBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUBodyLabel.swift; sourceTree = "<group>"; };
 		D74993B529FBFC610091D507 /* UIVIewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewControllerExtension.swift; sourceTree = "<group>"; };
+		D74993BA29FD05E80091D507 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		D74993BC29FD06280091D507 /* NetworkingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		D74993BE29FD072A0091D507 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		D74993C029FD07E60091D507 /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
+		D74993C229FD08580091D507 /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
+		D74993C429FD088F0091D507 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		D74993C629FD08C70091D507 /* GalleryVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVCViewModel.swift; sourceTree = "<group>"; };
+		D74993C829FD14400091D507 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		D74993CB29FD15EE0091D507 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		D74993CE29FD175C0091D507 /* MUImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUImageView.swift; sourceTree = "<group>"; };
 		D7BA104F29FA5C0D00C2A233 /* MobileUpGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileUpGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BA105229FA5C0D00C2A233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7BA105429FA5C0D00C2A233 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				D71E246829FA66EF0049A157 /* User.swift */,
+				D74993C029FD07E60091D507 /* PhotoResponse.swift */,
+				D74993C429FD088F0091D507 /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -111,6 +133,7 @@
 		D71E246D29FA69070049A157 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				D74993B929FD05C50091D507 /* Networking */,
 				D71E246E29FA691C0049A157 /* KeychainManager */,
 			);
 			path = Managers;
@@ -131,6 +154,8 @@
 			children = (
 				D7BA105629FA5C0D00C2A233 /* LoginVC.swift */,
 				D71E248229FBD6900049A157 /* WebViewView */,
+				D74993C229FD08580091D507 /* GalleryVC.swift */,
+				D74993C629FD08C70091D507 /* GalleryVCViewModel.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -138,6 +163,8 @@
 		D71E247229FBB5D50049A157 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				D74993CD29FD173E0091D507 /* ImageViews */,
+				D74993CA29FD15A10091D507 /* Cells */,
 				D74993AF29FBFA930091D507 /* Views */,
 				D74993AC29FBFA250091D507 /* ViewControllers */,
 				D71E247629FBB6720049A157 /* Labels */,
@@ -168,6 +195,7 @@
 			children = (
 				D71E247C29FBBABD0049A157 /* Constants.swift */,
 				D71E248329FBDAF30049A157 /* ErrorMessage.swift */,
+				D74993C829FD14400091D507 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -203,6 +231,32 @@
 				D74993B529FBFC610091D507 /* UIVIewControllerExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D74993B929FD05C50091D507 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D74993BA29FD05E80091D507 /* NetworkingManager.swift */,
+				D74993BC29FD06280091D507 /* NetworkingError.swift */,
+				D74993BE29FD072A0091D507 /* Endpoints.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D74993CA29FD15A10091D507 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D74993CB29FD15EE0091D507 /* PhotoCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D74993CD29FD173E0091D507 /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				D74993CE29FD175C0091D507 /* MUImageView.swift */,
+			);
+			path = ImageViews;
 			sourceTree = "<group>";
 		};
 		D7BA104629FA5C0D00C2A233 = {
@@ -318,22 +372,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74993CC29FD15EE0091D507 /* PhotoCell.swift in Sources */,
 				D7BA105729FA5C0D00C2A233 /* LoginVC.swift in Sources */,
 				D71E246C29FA68590049A157 /* MainCoordinator.swift in Sources */,
 				D71E247A29FBB6A60049A157 /* MUTitleLabel.swift in Sources */,
 				D71E248729FBE6AD0049A157 /* KeychainWrapper.swift in Sources */,
 				D7BA105329FA5C0D00C2A233 /* AppDelegate.swift in Sources */,
+				D74993C929FD14400091D507 /* UIHelper.swift in Sources */,
 				D71E247F29FBCF2D0049A157 /* WebViewVC.swift in Sources */,
 				D71E247029FA694D0049A157 /* KeychainManager.swift in Sources */,
+				D74993CF29FD175C0091D507 /* MUImageView.swift in Sources */,
 				D71E247D29FBBABD0049A157 /* Constants.swift in Sources */,
 				D7BA105529FA5C0D00C2A233 /* SceneDelegate.swift in Sources */,
+				D74993C529FD088F0091D507 /* Photo.swift in Sources */,
 				D71E248429FBDAF30049A157 /* ErrorMessage.swift in Sources */,
+				D74993BF29FD072A0091D507 /* Endpoints.swift in Sources */,
+				D74993BD29FD06280091D507 /* NetworkingError.swift in Sources */,
 				D74993B329FBFB0A0091D507 /* MUBodyLabel.swift in Sources */,
 				D71E246929FA66EF0049A157 /* User.swift in Sources */,
 				D74993B129FBFABE0091D507 /* MUAlertContainerView.swift in Sources */,
+				D74993BB29FD05E80091D507 /* NetworkingManager.swift in Sources */,
 				D71E248829FBE6AD0049A157 /* KeychainAccessibillity.swift in Sources */,
 				D74993B629FBFC610091D507 /* UIVIewControllerExtension.swift in Sources */,
+				D74993C129FD07E60091D507 /* PhotoResponse.swift in Sources */,
+				D74993C329FD08580091D507 /* GalleryVC.swift in Sources */,
 				D71E246629FA66710049A157 /* AuthService.swift in Sources */,
+				D74993C729FD08C70091D507 /* GalleryVCViewModel.swift in Sources */,
 				D74993AE29FBFA3C0091D507 /* MUAlertVC.swift in Sources */,
 				D71E248129FBD6810049A157 /* WebViewViewModel.swift in Sources */,
 				D71E247429FBB60A0049A157 /* MUButton.swift in Sources */,

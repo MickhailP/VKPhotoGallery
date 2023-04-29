@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ButtonLabels: String {
 	case loginButton = "Вход через VK"
@@ -28,3 +29,17 @@ struct KeychainKeys {
 	static let userKey = "USER"
 }
 
+struct VKAppID {
+	static let identifier = "51625739"
+	static let albumOwner = "-128666765"
+	static let albumId = "266310117"
+}
+
+
+struct CellsNames {
+	static let photoCell = "PhotoCell"
+}
+
+struct Images{
+	static let placeholder = UIImage(named: "Placeholder_Image")
+}
