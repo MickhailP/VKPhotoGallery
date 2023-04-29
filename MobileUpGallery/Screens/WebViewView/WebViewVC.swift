@@ -70,6 +70,7 @@ final class WebViewVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
 		if viewModel.authService.isAuthenticated {
 			presentGFAlertOnMainTread(title: "Success", message: "Authorisation completed", buttonTitle: "Ok") { [weak self] in
 				self?.presentingViewController?.dismiss(animated: true)
+				try? self?.viewModel.showGalleryView()
 			}
 		} else {
 			do {

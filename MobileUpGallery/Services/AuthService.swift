@@ -8,13 +8,6 @@
 import Foundation
 
 
-struct VKAppID {
-	static let identifier = "51625739"
-	static let albumOwner = "-128666765"
-	static let albumId = "266310117"
-}
-
-
 final class AuthService {
 
 	weak var coordinator: MainCoordinator?

@@ -30,6 +30,20 @@ final class NetworkingManager {
 		}
 	}
 
+	func fetchImage(from urlString: String) async -> UIImage? {
+		guard let url = URL(string: urlString) else   {
+			return nil
+		}
+
+		do {
+			let (data, response) = try await URLSession.shared.data(from: url)
+			try handleResponse(response)
+			return UIImage(data: data)
+		} catch  {
+			print(error)
+			return nil
+		}
+	}
 
 
 	/// Check if URLResponse have good status code, if it's not, it will throw an error
@@ -43,22 +57,6 @@ final class NetworkingManager {
 			return
 		} else {
 			throw NetworkingError.error(response.statusCode)
-		}
-	}
-
-
-
-	private func fetchImage(from urlString: String) async -> UIImage? {
-		guard let url = URL(string: urlString) else   {
-			return nil
-		}
-
-		do {
-			let (data, _) = try await URLSession.shared.data(from: url)
-			return UIImage(data: data)
-		} catch  {
-			print(error)
-			return nil
 		}
 	}
 }
