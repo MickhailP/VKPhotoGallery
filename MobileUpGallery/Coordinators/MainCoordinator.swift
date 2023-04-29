@@ -36,8 +36,8 @@ final class MainCoordinator: Coordinator {
 
 	func start() {
 		let authService = AuthService(coordinator: self)
-		authService.performAuthorization()
-//		presentLoginView()
+//		authService.performAuthorization()
+		presentLoginView()
 	}
 
 
@@ -56,8 +56,8 @@ final class MainCoordinator: Coordinator {
 
 	func presentGallery(for user: User) {
 		print("Gallery HAS BEEN PUSHED")
-		let destVC = GalleryVC()
-		//MARK: CHECK
-		navigationController.setViewControllers([LoginVC(coordinator: self), destVC], animated: true)
+//		let destVC = GalleryVC()
+//		//MARK: CHECK
+//		navigationController.setViewControllers([LoginVC(coordinator: self), destVC], animated: true)
 	}
 }
