@@ -56,7 +56,6 @@ final class WebViewVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
 			make.leading.equalTo(view.snp.leading).inset(0)
 			make.trailing.equalTo(view.snp.trailing).offset(0)
 		}
-
 	}
 
 
@@ -68,32 +67,42 @@ final class WebViewVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
 
 	@objc func dismissView() {
-		dismiss(animated: true)
-		do {
-			try viewModel.showGalleryView()
-			// SHOW Success message
-		} catch  {
-			//SHOW ALERT
-			print("ERROR")
+		if viewModel.authService.isAuthenticated {
+			presentGFAlertOnMainTread(title: "Success", message: "Authorisation completed", buttonTitle: "Ok") { [weak self] in
+				self?.presentingViewController?.dismiss(animated: true)
+			}
+		} else {
+			do {
+				try viewModel.showGalleryView()
+			} catch let error as ErrorMessage {
+				presentGFAlertOnMainTread(title: "Error", message: "Something went wrong: \(error.rawValue)", buttonTitle: "Ok") { [weak self] in
+					self?.presentingViewController?.dismiss(animated: true)
+				}
+			} catch {
+				presentGFAlertOnMainTread(title: "Unknown error", message: "Something went wrong\(#function)", buttonTitle: "Ok")
+			}
 		}
 	}
 }
 
 
+
 // MARK: WKNavigationDelegate methods
 extension WebViewVC {
+
 	func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
 
 		guard let redirectURL = webView.url else { return }
-		print(redirectURL)
 
-		do {
-			try viewModel.authService.checkIsAuthorisationFinished(for: redirectURL)
-			DispatchQueue.main.async {
+		if viewModel.checkTargetPage(for: redirectURL) {
+			do {
+				try viewModel.authService.getUserDataFrom(url: redirectURL)
 				webView.stopLoading()
+			} catch let error as ErrorMessage {
+				presentGFAlertOnMainTread(title: "Authorisation error", message: "Something went wrong: \(error.rawValue)", buttonTitle: "Ok")
+			} catch  {
+				presentGFAlertOnMainTread(title: "Unknown error", message: "Something went wrong", buttonTitle: "Ok")
 			}
-		} catch  {
-			// Show alert
 		}
 	}
 }

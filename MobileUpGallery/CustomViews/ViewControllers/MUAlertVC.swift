@@ -20,6 +20,8 @@ final class MUAlertVC: UIViewController {
 
 	var padding: CGFloat = 20
 
+	var completion: (()-> Void)? = nil
+
 
 	init(title: String, message: String, buttonTitle: String) {
 		super.init(nibName: nil, bundle: nil)
@@ -99,5 +101,8 @@ final class MUAlertVC: UIViewController {
 
 	@objc func dismissVC() {
 		dismiss(animated: true)
+		if let completion {
+			completion()
+		}
 	}
 }

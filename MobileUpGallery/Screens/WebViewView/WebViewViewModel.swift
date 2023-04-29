@@ -31,4 +31,15 @@ final class WebViewViewModel {
 		}
 		coordinator?.presentGallery(for: user)
 	}
+
+	func checkTargetPage(for url: URL) -> Bool {
+		let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+		if let components = components {
+			if components.path == "/blank.html" {
+				return true
+			}
+		}
+		return false
+	}
 }
+

@@ -23,6 +23,8 @@
 		D74993AE29FBFA3C0091D507 /* MUAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993AD29FBFA3C0091D507 /* MUAlertVC.swift */; };
 		D74993B129FBFABE0091D507 /* MUAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B029FBFABE0091D507 /* MUAlertContainerView.swift */; };
 		D74993B329FBFB0A0091D507 /* MUBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B229FBFB0A0091D507 /* MUBodyLabel.swift */; };
+		D74993B629FBFC610091D507 /* UIVIewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B529FBFC610091D507 /* UIVIewControllerExtension.swift */; };
+		D74993B829FCDC9E0091D507 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B729FCDC9D0091D507 /* GalleryVC.swift */; };
 		D7BA105329FA5C0D00C2A233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105229FA5C0D00C2A233 /* AppDelegate.swift */; };
 		D7BA105529FA5C0D00C2A233 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105429FA5C0D00C2A233 /* SceneDelegate.swift */; };
 		D7BA105729FA5C0D00C2A233 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105629FA5C0D00C2A233 /* LoginVC.swift */; };
@@ -48,6 +50,8 @@
 		D74993AD29FBFA3C0091D507 /* MUAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUAlertVC.swift; sourceTree = "<group>"; };
 		D74993B029FBFABE0091D507 /* MUAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUAlertContainerView.swift; sourceTree = "<group>"; };
 		D74993B229FBFB0A0091D507 /* MUBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUBodyLabel.swift; sourceTree = "<group>"; };
+		D74993B529FBFC610091D507 /* UIVIewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewControllerExtension.swift; sourceTree = "<group>"; };
+		D74993B729FCDC9D0091D507 /* GalleryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVC.swift; sourceTree = "<group>"; };
 		D7BA104F29FA5C0D00C2A233 /* MobileUpGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileUpGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BA105229FA5C0D00C2A233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7BA105429FA5C0D00C2A233 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 			children = (
 				D7BA105629FA5C0D00C2A233 /* LoginVC.swift */,
 				D71E248229FBD6900049A157 /* WebViewView */,
+				D74993B729FCDC9D0091D507 /* GalleryVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -195,6 +200,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D74993B429FBFBFB0091D507 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D74993B529FBFC610091D507 /* UIVIewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D7BA104629FA5C0D00C2A233 = {
 			isa = PBXGroup;
 			children = (
@@ -216,14 +229,15 @@
 			isa = PBXGroup;
 			children = (
 				D7BA106029FA5C1000C2A233 /* Info.plist */,
-				D71E247129FBB56C0049A157 /* Screens */,
-				D71E247229FBB5D50049A157 /* CustomViews */,
 				D71E246429FA65F90049A157 /* Support */,
 				D71E246A29FA680A0049A157 /* Coordinators */,
+				D71E247129FBB56C0049A157 /* Screens */,
+				D71E247229FBB5D50049A157 /* CustomViews */,
 				D71E246329FA65E00049A157 /* Services */,
 				D71E246D29FA69070049A157 /* Managers */,
 				D71E246729FA66D70049A157 /* Models */,
 				D71E247B29FBBAA10049A157 /* Utilities */,
+				D74993B429FBFBFB0091D507 /* Extensions */,
 				D7BA106629FA5E1400C2A233 /* .gitinore */,
 			);
 			path = MobileUpGallery;
@@ -318,9 +332,11 @@
 				D7BA105529FA5C0D00C2A233 /* SceneDelegate.swift in Sources */,
 				D71E248429FBDAF30049A157 /* ErrorMessage.swift in Sources */,
 				D74993B329FBFB0A0091D507 /* MUBodyLabel.swift in Sources */,
+				D74993B829FCDC9E0091D507 /* GalleryVC.swift in Sources */,
 				D71E246929FA66EF0049A157 /* User.swift in Sources */,
 				D74993B129FBFABE0091D507 /* MUAlertContainerView.swift in Sources */,
 				D71E248829FBE6AD0049A157 /* KeychainAccessibillity.swift in Sources */,
+				D74993B629FBFC610091D507 /* UIVIewControllerExtension.swift in Sources */,
 				D71E246629FA66710049A157 /* AuthService.swift in Sources */,
 				D74993AE29FBFA3C0091D507 /* MUAlertVC.swift in Sources */,
 				D71E248129FBD6810049A157 /* WebViewViewModel.swift in Sources */,

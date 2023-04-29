@@ -50,23 +50,7 @@ final class AuthService {
 		}
 	}
 
-
-	func checkIsAuthorisationFinished(for url: URL) throws  {
-
-		let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
-
-		if let components = components {
-			if components.path == "/blank.html" {
-				try getUserDataFrom(url: url)
-			} else {
-				throw ErrorMessage.invalidResponse
-			}
-		}
-		throw ErrorMessage.authorisationError
-	}
-
-
-	private func getUserDataFrom(url: URL) throws {
+	func getUserDataFrom(url: URL) throws {
 
 		var components = URLComponents()
 		components.query = url.fragment
@@ -77,27 +61,24 @@ final class AuthService {
 			let userID = items.first { $0.name == "user_id"}?.value
 			let expiresIn = items.first { $0.name == "expires_in"}?.value
 
-
-			guard let expiresIn else {
-				throw ErrorMessage.invalidResponse
-			}
-
-			guard let seconds = Double(expiresIn) else {
+			guard let expiresIn,
+				  let seconds = Double(expiresIn),
+				  let userID,
+				  let accessToken
+			else {
 				throw ErrorMessage.invalidResponse
 			}
 
 			let date = Date.now.addingTimeInterval(seconds)
 
-			if let userID, let accessToken {
-				let user = User(userID: userID, accessToken: accessToken, tokenExpiringDate: date)
+			let user = User(userID: userID, accessToken: accessToken, tokenExpiringDate: date)
 
-				if KeychainManager.save(user: user) != nil  {
-					throw ErrorMessage.activeUserMissing
-				}
-				activeUser = user
-			} else {
-				throw ErrorMessage.invalidResponse
+			if KeychainManager.save(user: user) != nil  {
+				throw ErrorMessage.activeUserMissing
 			}
+			activeUser = user
+			isAuthenticated = true
+
 		} else {
 			throw ErrorMessage.invalidResponse
 		}

@@ -32,7 +32,7 @@ final class MUBodyLabel: UILabel {
 		font = UIFont.preferredFont(forTextStyle: .body)
 		adjustsFontForContentSizeCategory = true
 		minimumScaleFactor = 0.75
-		lineBreakMode = .byWordWrapping //WORD WRAPPING
+		lineBreakMode = .byWordWrapping
 		numberOfLines = 0
 		translatesAutoresizingMaskIntoConstraints = false
 	}

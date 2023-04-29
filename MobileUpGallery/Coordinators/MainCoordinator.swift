@@ -55,6 +55,9 @@ final class MainCoordinator: Coordinator {
 
 
 	func presentGallery(for user: User) {
-		
+		print("Gallery HAS BEEN PUSHED")
+		let destVC = GalleryVC()
+		//MARK: CHECK
+		navigationController.setViewControllers([LoginVC(coordinator: self), destVC], animated: true)
 	}
 }
