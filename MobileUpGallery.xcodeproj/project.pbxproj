@@ -27,6 +27,7 @@
 		D74993BB29FD05E80091D507 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993BA29FD05E80091D507 /* NetworkingManager.swift */; };
 		D74993BD29FD06280091D507 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993BC29FD06280091D507 /* NetworkingError.swift */; };
 		D74993BF29FD072A0091D507 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993BE29FD072A0091D507 /* Endpoints.swift */; };
+		D74993C129FD07E60091D507 /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993C029FD07E60091D507 /* PhotoResponse.swift */; };
 		D7BA105329FA5C0D00C2A233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105229FA5C0D00C2A233 /* AppDelegate.swift */; };
 		D7BA105529FA5C0D00C2A233 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105429FA5C0D00C2A233 /* SceneDelegate.swift */; };
 		D7BA105729FA5C0D00C2A233 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105629FA5C0D00C2A233 /* LoginVC.swift */; };
@@ -56,6 +57,7 @@
 		D74993BA29FD05E80091D507 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		D74993BC29FD06280091D507 /* NetworkingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		D74993BE29FD072A0091D507 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		D74993C029FD07E60091D507 /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
 		D7BA104F29FA5C0D00C2A233 /* MobileUpGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileUpGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BA105229FA5C0D00C2A233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7BA105429FA5C0D00C2A233 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				D71E246829FA66EF0049A157 /* User.swift */,
+				D74993C029FD07E60091D507 /* PhotoResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				D74993BB29FD05E80091D507 /* NetworkingManager.swift in Sources */,
 				D71E248829FBE6AD0049A157 /* KeychainAccessibillity.swift in Sources */,
 				D74993B629FBFC610091D507 /* UIVIewControllerExtension.swift in Sources */,
+				D74993C129FD07E60091D507 /* PhotoResponse.swift in Sources */,
 				D71E246629FA66710049A157 /* AuthService.swift in Sources */,
 				D74993AE29FBFA3C0091D507 /* MUAlertVC.swift in Sources */,
 				D71E248129FBD6810049A157 /* WebViewViewModel.swift in Sources */,
