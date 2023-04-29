@@ -35,21 +35,29 @@ final class MainCoordinator: Coordinator {
 
 
 	func start() {
-		
+		let authService = AuthService(coordinator: self)
+//		authService.performAuthorization()
+		presentLoginView()
 	}
 
 
 	func presentLoginView() {
-
+		let vc = LoginVC(coordinator: self)
+		navigationController.pushViewController(vc, animated: false)
 	}
 
 
 	func presentWebView() {
-
+		let destVC = WebViewVC(authService: AuthService(), coordinator: self)
+		let navController = UINavigationController(rootViewController: destVC)
+		navigationController.present(navController, animated: true)
 	}
 
 
 	func presentGallery(for user: User) {
-
+		print("Gallery HAS BEEN PUSHED")
+//		let destVC = GalleryVC()
+//		//MARK: CHECK
+//		navigationController.setViewControllers([LoginVC(coordinator: self), destVC], animated: true)
 	}
 }

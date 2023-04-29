@@ -10,17 +10,31 @@ import Foundation
 
 final class KeychainManager{
 
-	enum SaveKeys {
-		static let user = "user"
+	static func retrieveUser(completion: @escaping (Result<User, ErrorMessage>) -> Void) {
+
+		let fetchedData = KeychainWrapper.standard.data(forKey: KeychainKeys.userKey)
+
+		guard let fetchedData else {
+			completion(.failure(.invalidData))
+			return
+		}
+
+		do {
+			let decodedUser = try JSONDecoder().decode(User.self, from: fetchedData)
+			completion(.success(decodedUser))
+		} catch  {
+			completion(.failure(.decodingError))
+		}
 	}
 
 
-	static func retrieveUser(completion: @escaping (Result<User, Error>) -> Void) {
-
-	}
-
-
-	static func save(user: User) {
-
+	static func save(user: User) -> ErrorMessage? {
+		do {
+			let encodedUser = try JSONEncoder().encode(user)
+			KeychainWrapper.standard.set(encodedUser, forKey: KeychainKeys.userKey)
+			return nil
+		} catch {
+			return .encodingError
+		}
 	}
 }
