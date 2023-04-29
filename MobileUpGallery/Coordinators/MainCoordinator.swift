@@ -36,8 +36,7 @@ final class MainCoordinator: Coordinator {
 
 	func start() {
 		let authService = AuthService(coordinator: self)
-//		authService.performAuthorization()
-		presentLoginView()
+		authService.performAuthorization()
 	}
 
 

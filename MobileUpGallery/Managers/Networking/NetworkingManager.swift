@@ -1,0 +1,64 @@
+//
+//  NetworkingManager.swift
+//  MobileUpGallery
+//
+//  Created by Миша Перевозчиков on 29.04.2023.
+//
+
+import Foundation
+import UIKit
+
+final class NetworkingManager {
+
+	func downloadDataResult(from url: URL?) async -> Result<Data,Error> {
+
+		guard let url = url else {
+			print("Failed to convert URLString")
+			return .failure( URLError(.badURL))
+		}
+
+		do {
+			let (data, response) = try await URLSession.shared.data(from: url)
+			try handleResponse(response)
+
+			print(data)
+			return .success(data)
+		} catch {
+			print(error)
+			print("There was an error during data fetching! ", error.localizedDescription)
+			return .failure(error)
+		}
+	}
+
+
+
+	/// Check if URLResponse have good status code, if it's not, it will throw an error
+	/// - Parameter response: URLResponse from dataTask
+	private func handleResponse(_ response: URLResponse) throws {
+
+		guard let response = response as? HTTPURLResponse else {
+			throw NetworkingError.badURLResponse
+		}
+		if  response.statusCode >= 200 && response.statusCode <= 300 {
+			return
+		} else {
+			throw NetworkingError.error(response.statusCode)
+		}
+	}
+
+
+
+	private func fetchImage(from urlString: String) async -> UIImage? {
+		guard let url = URL(string: urlString) else   {
+			return nil
+		}
+
+		do {
+			let (data, _) = try await URLSession.shared.data(from: url)
+			return UIImage(data: data)
+		} catch  {
+			print(error)
+			return nil
+		}
+	}
+}
