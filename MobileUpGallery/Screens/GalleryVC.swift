@@ -10,16 +10,9 @@ import UIKit
 import SnapKit
 
 
-final class GalleryVC: UIViewController {
+final class GalleryVC: CollectionVC {
 
 	let viewModel: GalleryVCViewModel
-
-	private var collectionView: UICollectionView!
-	private var dataSource: UICollectionViewDiffableDataSource<Section, Photo>!
-
-	enum Section {
-		case main
-	}
 
 
 	init(coordinator: Coordinator, user: User, networkingManager: NetworkingManager) {
@@ -28,19 +21,16 @@ final class GalleryVC: UIViewController {
 		self.title = "MobileUP Gallery"
 	}
 
+
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .systemBackground
-
 		configureNavController()
-		configureCollectionView()
 		requestPhotos()
-		configureDataSource()
-
 	}
 
 
@@ -54,7 +44,6 @@ final class GalleryVC: UIViewController {
 		navigationController?.navigationBar.prefersLargeTitles = false
 
 		navigationItem.titleView?.sizeToFit()
-
 		navigationItem.setHidesBackButton(true, animated:true)
 
 		let exitButton = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(exit))
@@ -62,7 +51,8 @@ final class GalleryVC: UIViewController {
 		self.navigationItem.rightBarButtonItem = exitButton
 	}
 
-	private func configureCollectionView() {
+
+	override func configureCollectionView() {
 		collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createTwoColumnFlowLayout(in: view))
 		collectionView.delegate = self
 		view.addSubview(collectionView)
@@ -78,37 +68,15 @@ final class GalleryVC: UIViewController {
 		}
 	}
 
+
 	func requestPhotos() {
 		viewModel.requestImages(ofOwner: VKAppID.albumOwner, fromAlbum: VKAppID.albumId) { [weak self] photos in
-			self?.updateData(with: photos)
+			guard let self else { return }
+			self.update(dataSource: self.viewModel.photos, with: photos)
 		}
 	}
 }
 
-
-//MARK: - DataSource configuration
-extension GalleryVC {
-
-	func configureDataSource() {
-		dataSource = UICollectionViewDiffableDataSource<Section, Photo> (collectionView: collectionView, cellProvider: { collectionView, indexPath, photo in
-
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellsNames.photoCell, for: indexPath) as! PhotoCell
-
-			cell.set(photo: photo)
-			return cell
-		})
-	}
-
-	private func updateData(with photo: [Photo]) {
-		var snapshot = NSDiffableDataSourceSnapshot<Section, Photo> ()
-		snapshot.appendSections([.main])
-		snapshot.appendItems(viewModel.photos)
-
-		DispatchQueue.main.async {
-			self.dataSource.apply(snapshot)
-		}
-	}
-}
 
 //MARK: - UICollectionViewDelegate
 extension GalleryVC: UICollectionViewDelegate {

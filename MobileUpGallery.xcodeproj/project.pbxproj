@@ -22,6 +22,7 @@
 		D71E248829FBE6AD0049A157 /* KeychainAccessibillity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E248629FBE6AC0049A157 /* KeychainAccessibillity.swift */; };
 		D71F9D0229FD73D00041D08D /* DateEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F9D0129FD73D00041D08D /* DateEXT.swift */; };
 		D71F9D0429FD7C120041D08D /* IntEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F9D0329FD7C120041D08D /* IntEXT.swift */; };
+		D71F9D0629FDAACB0041D08D /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F9D0529FDAACB0041D08D /* CollectionVC.swift */; };
 		D74993AE29FBFA3C0091D507 /* MUAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993AD29FBFA3C0091D507 /* MUAlertVC.swift */; };
 		D74993B129FBFABE0091D507 /* MUAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B029FBFABE0091D507 /* MUAlertContainerView.swift */; };
 		D74993B329FBFB0A0091D507 /* MUBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B229FBFB0A0091D507 /* MUBodyLabel.swift */; };
@@ -61,6 +62,7 @@
 		D71E248629FBE6AC0049A157 /* KeychainAccessibillity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainAccessibillity.swift; sourceTree = "<group>"; };
 		D71F9D0129FD73D00041D08D /* DateEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEXT.swift; sourceTree = "<group>"; };
 		D71F9D0329FD7C120041D08D /* IntEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntEXT.swift; sourceTree = "<group>"; };
+		D71F9D0529FDAACB0041D08D /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		D74993AD29FBFA3C0091D507 /* MUAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUAlertVC.swift; sourceTree = "<group>"; };
 		D74993B029FBFABE0091D507 /* MUAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUAlertContainerView.swift; sourceTree = "<group>"; };
 		D74993B229FBFB0A0091D507 /* MUBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUBodyLabel.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				D74993AD29FBFA3C0091D507 /* MUAlertVC.swift */,
+				D71F9D0529FDAACB0041D08D /* CollectionVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				D71E247029FA694D0049A157 /* KeychainManager.swift in Sources */,
 				D74993CF29FD175C0091D507 /* MUImageView.swift in Sources */,
 				D71E247D29FBBABD0049A157 /* Constants.swift in Sources */,
+				D71F9D0629FDAACB0041D08D /* CollectionVC.swift in Sources */,
 				D7BA105529FA5C0D00C2A233 /* SceneDelegate.swift in Sources */,
 				D74993C529FD088F0091D507 /* Photo.swift in Sources */,
 				D71E248429FBDAF30049A157 /* ErrorMessage.swift in Sources */,
