@@ -25,9 +25,11 @@ struct ViewSize {
 	static let buttonHeight = 52
 }
 
+
 struct KeychainKeys {
 	static let userKey = "USER"
 }
+
 
 struct VKAppID {
 	static let identifier = "51625739"
@@ -40,6 +42,13 @@ struct CellsNames {
 	static let photoCell = "PhotoCell"
 }
 
+
 struct Images{
 	static let placeholder = UIImage(named: "Placeholder_Image")
+}
+
+
+struct CustomColors {
+	static let loginButtonColor = UIColor(named: "loginButtonColor")
+	static let loginTitleColor = UIColor(named: "loginTitleColor")
 }

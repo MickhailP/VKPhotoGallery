@@ -37,7 +37,6 @@ final class PhotoCell: UICollectionViewCell {
 	private func configure() {
 		self.addSubview(photoImageView)
 		photoImageView.translatesAutoresizingMaskIntoConstraints = false
-		photoImageView.contentMode = .scaleAspectFill
 		clipsToBounds = true
 		photoImageView.sizeToFit()
 

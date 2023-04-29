@@ -20,6 +20,8 @@
 		D71E248429FBDAF30049A157 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E248329FBDAF30049A157 /* ErrorMessage.swift */; };
 		D71E248729FBE6AD0049A157 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E248529FBE6AC0049A157 /* KeychainWrapper.swift */; };
 		D71E248829FBE6AD0049A157 /* KeychainAccessibillity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71E248629FBE6AC0049A157 /* KeychainAccessibillity.swift */; };
+		D71F9D0229FD73D00041D08D /* DateEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F9D0129FD73D00041D08D /* DateEXT.swift */; };
+		D71F9D0429FD7C120041D08D /* IntEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F9D0329FD7C120041D08D /* IntEXT.swift */; };
 		D74993AE29FBFA3C0091D507 /* MUAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993AD29FBFA3C0091D507 /* MUAlertVC.swift */; };
 		D74993B129FBFABE0091D507 /* MUAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B029FBFABE0091D507 /* MUAlertContainerView.swift */; };
 		D74993B329FBFB0A0091D507 /* MUBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993B229FBFB0A0091D507 /* MUBodyLabel.swift */; };
@@ -34,6 +36,7 @@
 		D74993C929FD14400091D507 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993C829FD14400091D507 /* UIHelper.swift */; };
 		D74993CC29FD15EE0091D507 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993CB29FD15EE0091D507 /* PhotoCell.swift */; };
 		D74993CF29FD175C0091D507 /* MUImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993CE29FD175C0091D507 /* MUImageView.swift */; };
+		D74993D229FD70CE0091D507 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74993D129FD70CE0091D507 /* PhotoVC.swift */; };
 		D7BA105329FA5C0D00C2A233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105229FA5C0D00C2A233 /* AppDelegate.swift */; };
 		D7BA105529FA5C0D00C2A233 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105429FA5C0D00C2A233 /* SceneDelegate.swift */; };
 		D7BA105729FA5C0D00C2A233 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA105629FA5C0D00C2A233 /* LoginVC.swift */; };
@@ -56,6 +59,8 @@
 		D71E248329FBDAF30049A157 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		D71E248529FBE6AC0049A157 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		D71E248629FBE6AC0049A157 /* KeychainAccessibillity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainAccessibillity.swift; sourceTree = "<group>"; };
+		D71F9D0129FD73D00041D08D /* DateEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEXT.swift; sourceTree = "<group>"; };
+		D71F9D0329FD7C120041D08D /* IntEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntEXT.swift; sourceTree = "<group>"; };
 		D74993AD29FBFA3C0091D507 /* MUAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUAlertVC.swift; sourceTree = "<group>"; };
 		D74993B029FBFABE0091D507 /* MUAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUAlertContainerView.swift; sourceTree = "<group>"; };
 		D74993B229FBFB0A0091D507 /* MUBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUBodyLabel.swift; sourceTree = "<group>"; };
@@ -70,6 +75,7 @@
 		D74993C829FD14400091D507 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		D74993CB29FD15EE0091D507 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		D74993CE29FD175C0091D507 /* MUImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUImageView.swift; sourceTree = "<group>"; };
+		D74993D129FD70CE0091D507 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
 		D7BA104F29FA5C0D00C2A233 /* MobileUpGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileUpGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BA105229FA5C0D00C2A233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7BA105429FA5C0D00C2A233 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 				D71E248229FBD6900049A157 /* WebViewView */,
 				D74993C229FD08580091D507 /* GalleryVC.swift */,
 				D74993C629FD08C70091D507 /* GalleryVCViewModel.swift */,
+				D74993D029FD70760091D507 /* PhotoScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -229,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				D74993B529FBFC610091D507 /* UIVIewControllerExtension.swift */,
+				D71F9D0129FD73D00041D08D /* DateEXT.swift */,
+				D71F9D0329FD7C120041D08D /* IntEXT.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -257,6 +266,14 @@
 				D74993CE29FD175C0091D507 /* MUImageView.swift */,
 			);
 			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		D74993D029FD70760091D507 /* PhotoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D74993D129FD70CE0091D507 /* PhotoVC.swift */,
+			);
+			path = PhotoScreen;
 			sourceTree = "<group>";
 		};
 		D7BA104629FA5C0D00C2A233 = {
@@ -375,11 +392,13 @@
 				D74993CC29FD15EE0091D507 /* PhotoCell.swift in Sources */,
 				D7BA105729FA5C0D00C2A233 /* LoginVC.swift in Sources */,
 				D71E246C29FA68590049A157 /* MainCoordinator.swift in Sources */,
+				D71F9D0429FD7C120041D08D /* IntEXT.swift in Sources */,
 				D71E247A29FBB6A60049A157 /* MUTitleLabel.swift in Sources */,
 				D71E248729FBE6AD0049A157 /* KeychainWrapper.swift in Sources */,
 				D7BA105329FA5C0D00C2A233 /* AppDelegate.swift in Sources */,
 				D74993C929FD14400091D507 /* UIHelper.swift in Sources */,
 				D71E247F29FBCF2D0049A157 /* WebViewVC.swift in Sources */,
+				D71F9D0229FD73D00041D08D /* DateEXT.swift in Sources */,
 				D71E247029FA694D0049A157 /* KeychainManager.swift in Sources */,
 				D74993CF29FD175C0091D507 /* MUImageView.swift in Sources */,
 				D71E247D29FBBABD0049A157 /* Constants.swift in Sources */,
@@ -395,6 +414,7 @@
 				D71E248829FBE6AD0049A157 /* KeychainAccessibillity.swift in Sources */,
 				D74993B629FBFC610091D507 /* UIVIewControllerExtension.swift in Sources */,
 				D74993C129FD07E60091D507 /* PhotoResponse.swift in Sources */,
+				D74993D229FD70CE0091D507 /* PhotoVC.swift in Sources */,
 				D74993C329FD08580091D507 /* GalleryVC.swift in Sources */,
 				D71E246629FA66710049A157 /* AuthService.swift in Sources */,
 				D74993C729FD08C70091D507 /* GalleryVCViewModel.swift in Sources */,
@@ -542,7 +562,8 @@
 				DEVELOPMENT_TEAM = 95D5HHTHLU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MobileUpGallery/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Разрешение необходимо для сохранеия фотографии.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = NO;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -573,7 +594,8 @@
 				DEVELOPMENT_TEAM = 95D5HHTHLU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MobileUpGallery/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Разрешение необходимо для сохранеия фотографии.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = NO;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

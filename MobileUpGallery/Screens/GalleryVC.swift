@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 
-final class GalleryVC: UIViewController, UICollectionViewDelegate {
+final class GalleryVC: UIViewController {
 
 	let viewModel: GalleryVCViewModel
 
@@ -55,10 +55,9 @@ final class GalleryVC: UIViewController, UICollectionViewDelegate {
 
 		navigationItem.titleView?.sizeToFit()
 
-		self.navigationItem.setHidesBackButton(true, animated:true)
+		navigationItem.setHidesBackButton(true, animated:true)
 
 		let exitButton = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(exit))
-		exitButton.tintColor = .label
 		exitButton.customView?.sizeToFit()
 		self.navigationItem.rightBarButtonItem = exitButton
 	}
@@ -108,5 +107,14 @@ extension GalleryVC {
 		DispatchQueue.main.async {
 			self.dataSource.apply(snapshot)
 		}
+	}
+}
+
+//MARK: - UICollectionViewDelegate
+extension GalleryVC: UICollectionViewDelegate {
+
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let photo = viewModel.photos[indexPath.item]
+		viewModel.coordinator?.presentPhotoScreen(for: photo)
 	}
 }

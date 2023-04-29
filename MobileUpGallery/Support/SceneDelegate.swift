@@ -21,9 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		window?.windowScene = windowScene
 		window?.rootViewController = navVC
 		window?.makeKeyAndVisible()
+		
 
 		let coordinator = MainCoordinator(navigationController: navVC)
 		coordinator.start()
+
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {
@@ -45,7 +47,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	func sceneDidEnterBackground(_ scene: UIScene) {
 
 	}
-
-
 }
-

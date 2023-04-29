@@ -16,6 +16,7 @@ protocol Coordinator: AnyObject {
 	func presentLoginView()
 	func presentWebView()
 	func presentGallery(for user: User)
+	func presentPhotoScreen(for photo: Photo)
 }
 
 
@@ -42,7 +43,7 @@ final class MainCoordinator: Coordinator {
 
 	func presentLoginView() {
 		let vc = LoginVC(coordinator: self)
-		navigationController.pushViewController(vc, animated: false)
+		navigationController.pushViewController(vc, animated: true)
 	}
 
 
@@ -54,9 +55,13 @@ final class MainCoordinator: Coordinator {
 
 
 	func presentGallery(for user: User) {
-		print("Gallery HAS BEEN PUSHED")
 		let destVC = GalleryVC(coordinator: self, user: user, networkingManager: NetworkingManager())
-
 		navigationController.setViewControllers([LoginVC(coordinator: self), destVC], animated: true)
+	}
+
+
+	func presentPhotoScreen(for photo: Photo) {
+		let destVC = PhotoVC(photo: photo)
+		navigationController.pushViewController(destVC, animated: true)
 	}
 }

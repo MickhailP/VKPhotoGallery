@@ -25,6 +25,7 @@ final class MUImageView: UIImageView {
 
 	private func configure() {
 		clipsToBounds = true
+		contentMode = .scaleAspectFill
 
 		if let placeholderImage {
 			image = placeholderImage
