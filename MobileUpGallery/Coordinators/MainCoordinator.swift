@@ -48,7 +48,7 @@ final class MainCoordinator: Coordinator {
 
 
 	func presentWebView() {
-		let destVC = WebViewVC(authService: AuthService(), coordinator: self)
+		let destVC = WebViewVC(authService: AuthService(coordinator: self), coordinator: self)
 		let navController = UINavigationController(rootViewController: destVC)
 		navigationController.present(navController, animated: true)
 	}

@@ -22,3 +22,6 @@
 "ErrorMessage_tryAgain" = "Some error occurred. Try again.";
 "ErrorMessage_badURL" = "Incorrect URL";
 
+"SuccessMessage_success" = "Success";
+"SuccessMessage_authorisationCompleted" = "Authorisation completed.";
+

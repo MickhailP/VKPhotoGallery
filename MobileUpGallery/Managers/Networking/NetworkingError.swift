@@ -9,6 +9,7 @@ import Foundation
 
 
 enum NetworkingError: Int, Error, LocalizedError {
+
     // 100 Informational
     case `continue` = 100
     case switchingProtocols = 101

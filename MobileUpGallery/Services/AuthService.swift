@@ -10,14 +10,14 @@ import Foundation
 
 final class AuthService {
 
-	weak var coordinator: MainCoordinator?
+	weak var coordinator: Coordinator?
 	var activeUser: User?
 	var isAuthenticated = false
 
 	let authURL = "https://oauth.vk.com/authorize?client_id=\(VKAppID.identifier)&display=mobile&redirect_uri=https://oauth.vk.com/blank.html&response_type=token&v=5.131"
 
 
-	init(coordinator: MainCoordinator? = nil) {
+	init(coordinator: Coordinator?) {
 		self.coordinator = coordinator
 	}
 
@@ -43,7 +43,8 @@ final class AuthService {
 		}
 	}
 
-	func getUserDataFrom(url: URL) throws {
+
+	func getUserAccessTokenDataFrom(url: URL) throws {
 
 		var components = URLComponents()
 		components.query = url.fragment

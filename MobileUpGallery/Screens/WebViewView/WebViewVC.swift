@@ -68,7 +68,7 @@ final class WebViewVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
 	@objc func dismissView() {
 		if viewModel.authService.isAuthenticated {
-			presentAlertOnMainTread(title: "Success", message: "Authorisation completed", buttonTitle: "Ok") { [weak self] in
+			presentAlertOnMainTread(title: SuccessMessage.success.localised, message: SuccessMessage.authorisationCompleted.localised, buttonTitle: "Ok") { [weak self] in
 				self?.presentingViewController?.dismiss(animated: true)
 				try? self?.viewModel.showGalleryView()
 			}
@@ -100,7 +100,7 @@ extension WebViewVC {
 
 		if viewModel.checkTargetPage(for: redirectURL) {
 			do {
-				try viewModel.authService.getUserDataFrom(url: redirectURL)
+				try viewModel.authService.getUserAccessTokenDataFrom(url: redirectURL)
 				webView.stopLoading()
 			} catch let error as ErrorMessage {
 				presentAlertOnMainTread(title: ErrorMessage.error.localised, message: error.localised, buttonTitle: "Ok")

@@ -15,3 +15,12 @@ enum ButtonLabels: String {
 		NSLocalizedString(String(describing: Self.self) + "_\(rawValue)" , comment: "")
 	}
 }
+
+enum SuccessMessage: String {
+	case success
+	case authorisationCompleted
+
+	var localised: String {
+		NSLocalizedString(String(describing: Self.self) + "_\(rawValue)" , comment: "")
+	}
+}

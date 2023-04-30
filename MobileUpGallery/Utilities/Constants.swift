@@ -8,9 +8,6 @@
 import Foundation
 import UIKit
 
-
-
-
 struct LoginViewTitlePaddings {
 	static let top = 170
 	static let leading = 24

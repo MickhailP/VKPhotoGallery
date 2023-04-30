@@ -22,5 +22,8 @@
 "ErrorMessage_tryAgain" = "Произошла ошибка попробуйте повторить запрос";
 "ErrorMessage_badURL" = "Неправильный URL";
 
+"SuccessMessage_success" = "Успех";
+"SuccessMessage_authorisationCompleted" = "Авторизация завершена.";
+
 
 

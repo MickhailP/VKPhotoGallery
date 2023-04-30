@@ -12,6 +12,7 @@ final class PhotoCell: UICollectionViewCell {
 
 	var photoImageView = MUImageView(frame: .zero)
 
+
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		configure()
@@ -43,7 +44,6 @@ final class PhotoCell: UICollectionViewCell {
 
 		photoImageView.snp.makeConstraints { make in
 			make.top.leading.trailing.bottom.equalToSuperview().inset(0)
-//			make.height.equalToSuperview()
 		}
 	}
 }

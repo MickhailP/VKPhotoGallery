@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MUTitleLabel: UILabel {
+final class MUTitleLabel: UILabel {
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)

@@ -6,10 +6,9 @@
 //
 
 import Foundation
-
 import UIKit
 
-struct UIHelper {
+class UIHelper {
 
 	static func createOneColumnHorizontalFlowLayout(in view: UIView) -> UICollectionViewFlowLayout {
 		let itemHeight = 54
@@ -36,6 +35,4 @@ struct UIHelper {
 
 		return flowLayout
 	}
-
-	
 }
