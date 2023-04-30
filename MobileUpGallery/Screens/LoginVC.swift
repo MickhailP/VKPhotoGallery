@@ -12,7 +12,7 @@ final class LoginVC: UIViewController, Coordinating {
 
 	var coordinator: Coordinator?
 
-	let loginButton = MUButton(backgroundColor: CustomColors.loginButtonColor ?? .black, title: ButtonLabels.loginButton.rawValue)
+	let loginButton = MUButton(backgroundColor: CustomColors.loginButtonColor ?? .black, title: ButtonLabels.loginButton.localised)
 	let titleLabel = MUTitleLabel(textAlignment: .left, fontSize: 44)
 
 

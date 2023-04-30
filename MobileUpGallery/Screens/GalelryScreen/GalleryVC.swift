@@ -57,7 +57,7 @@ final class GalleryVC: CollectionVC {
 		navigationItem.titleView?.sizeToFit()
 		navigationItem.setHidesBackButton(true, animated:true)
 
-		let exitButton = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(exit))
+		let exitButton = UIBarButtonItem(title: ButtonLabels.logout.localised, style: .plain, target: self, action: #selector(exit))
 		exitButton.customView?.sizeToFit()
 		self.navigationItem.rightBarButtonItem = exitButton
 	}
@@ -88,7 +88,7 @@ final class GalleryVC: CollectionVC {
 				case.success(let photos):
 					self.update(dataSource: self.viewModel.photos, with: photos)
 				case .failure(let error):
-					self.presentAlertOnMainTread(title: "Error", message: "The photos wasn't received. Error: \(error.rawValue)", buttonTitle: "Ok")
+					self.presentAlertOnMainTread(title: ErrorMessage.error.localised, message: error.localised, buttonTitle: "Ok")
 			}
 		}
 	}

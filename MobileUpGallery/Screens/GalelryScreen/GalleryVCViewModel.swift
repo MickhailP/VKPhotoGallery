@@ -29,7 +29,10 @@ final class GalleryVCViewModel {
 
 		print(endpoint)
 
-		guard let url = URL(string: endpoint) else { print("error"); return }
+		guard let url = URL(string: endpoint) else {
+			completion(.failure(.badURL))
+			return
+		}
 
 		Task {
 			let result = await self.networkingManager.downloadDataResult(from: url)

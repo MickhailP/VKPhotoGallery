@@ -15,7 +15,7 @@ final class KeychainManager{
 		let fetchedData = KeychainWrapper.standard.data(forKey: KeychainKeys.userKey)
 
 		guard let fetchedData else {
-			completion(.failure(.invalidData))
+			completion(.failure(.dataIsMissing))
 			return
 		}
 
