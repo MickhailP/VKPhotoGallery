@@ -81,9 +81,15 @@ final class GalleryVC: CollectionVC {
 
 
 	func requestPhotos() {
-		viewModel.requestImages(ofOwner: VKAppID.albumOwner, fromAlbum: VKAppID.albumId) { [weak self] photos in
+		viewModel.requestImages(ofOwner: VKAppID.albumOwner, fromAlbum: VKAppID.albumId) { [weak self] result in
 			guard let self else { return }
-			self.update(dataSource: self.viewModel.photos, with: photos)
+
+			switch result {
+				case.success(let photos):
+					self.update(dataSource: self.viewModel.photos, with: photos)
+				case .failure(let error):
+					self.presentAlertOnMainTread(title: "Error", message: "The photos wasn't received. Error: \(error.rawValue)", buttonTitle: "Ok")
+			}
 		}
 	}
 }

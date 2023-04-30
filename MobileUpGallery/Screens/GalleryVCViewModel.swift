@@ -23,7 +23,7 @@ final class GalleryVCViewModel {
 	}
 
 
-	func requestImages(ofOwner owner: String, fromAlbum album: String, completion: @escaping ([Photo]) -> Void) {
+	func requestImages(ofOwner owner: String, fromAlbum album: String, completion: @escaping (Result<[Photo], ErrorMessage>) -> Void) {
 
 		let endpoint = "\(VKUrls.apiRequest.rawValue)\(EndpointMethods.getPhotos.rawValue)?owner_id=\(owner)&album_id=\(album)&access_token=\(user.accessToken)&v=5.131"
 
@@ -37,20 +37,17 @@ final class GalleryVCViewModel {
 			switch result {
 				case .success(let data):
 					do {
-
 						let decodedData = try JSONDecoder().decode(PhotoResponse.self, from: data)
 						let photoItems = decodedData.response.items
+						let photos = extractPhotoDataFrom(photoItems)
 
-						completion(extractPhotoDataFrom(photoItems))
+						completion(.success(photos))
 
-					} catch  {
-						//SHOW ALERT
-						print(error)
+					} catch {
+						completion(.failure(.decodingError))
 					}
-				case .failure(let failure):
-					//SHOW ALERT
-					print(failure)
-					break
+				case .failure:
+					completion(.failure(.fetchingError))
 			}
 		}
 	}

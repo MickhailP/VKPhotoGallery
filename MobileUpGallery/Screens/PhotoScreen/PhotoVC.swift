@@ -106,7 +106,7 @@ extension PhotoVC {
 
 	private func configureActivityVC() {
 		guard let image = imageView.image, image != Images.placeholder else {
-			presentGFAlertOnMainTread(title: "Error", message: ErrorMessage.imageIsEmpty.rawValue, buttonTitle: "Ok")
+			presentAlertOnMainTread(title: "Error", message: ErrorMessage.imageIsEmpty.rawValue, buttonTitle: "Ok")
 			return
 		}
 

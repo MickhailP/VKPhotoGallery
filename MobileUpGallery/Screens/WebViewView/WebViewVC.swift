@@ -68,7 +68,7 @@ final class WebViewVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
 	@objc func dismissView() {
 		if viewModel.authService.isAuthenticated {
-			presentGFAlertOnMainTread(title: "Success", message: "Authorisation completed", buttonTitle: "Ok") { [weak self] in
+			presentAlertOnMainTread(title: "Success", message: "Authorisation completed", buttonTitle: "Ok") { [weak self] in
 				self?.presentingViewController?.dismiss(animated: true)
 				try? self?.viewModel.showGalleryView()
 			}
@@ -76,11 +76,11 @@ final class WebViewVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
 			do {
 				try viewModel.showGalleryView()
 			} catch let error as ErrorMessage {
-				presentGFAlertOnMainTread(title: "Error", message: "Something went wrong: \(error.rawValue)", buttonTitle: "Ok") { [weak self] in
+				presentAlertOnMainTread(title: "Error", message: "Something went wrong: \(error.rawValue)", buttonTitle: "Ok") { [weak self] in
 					self?.presentingViewController?.dismiss(animated: true)
 				}
 			} catch {
-				presentGFAlertOnMainTread(title: "Unknown error", message: "Something went wrong\(#function)", buttonTitle: "Ok")
+				presentAlertOnMainTread(title: "Unknown error", message: "Something went wrong\(#function)", buttonTitle: "Ok")
 			}
 		}
 	}
@@ -100,9 +100,9 @@ extension WebViewVC {
 				try viewModel.authService.getUserDataFrom(url: redirectURL)
 				webView.stopLoading()
 			} catch let error as ErrorMessage {
-				presentGFAlertOnMainTread(title: "Authorisation error", message: "Something went wrong: \(error.rawValue)", buttonTitle: "Ok")
+				presentAlertOnMainTread(title: "Authorisation error", message: "Something went wrong: \(error.rawValue)", buttonTitle: "Ok")
 			} catch  {
-				presentGFAlertOnMainTread(title: "Unknown error", message: "Something went wrong", buttonTitle: "Ok")
+				presentAlertOnMainTread(title: "Unknown error", message: "Something went wrong", buttonTitle: "Ok")
 			}
 		}
 	}

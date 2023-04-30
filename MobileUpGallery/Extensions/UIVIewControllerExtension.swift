@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
 
-	func presentGFAlertOnMainTread(title: String, message: String, buttonTitle: String, completion: (()-> Void)? = nil) {
+	func presentAlertOnMainTread(title: String, message: String, buttonTitle: String, completion: (()-> Void)? = nil) {
 		DispatchQueue.main.async {
 			let alertVC = MUAlertVC(title: title, message: message, buttonTitle: buttonTitle)
 
