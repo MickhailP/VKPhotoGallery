@@ -22,4 +22,13 @@ extension UIViewController {
 			self.present(alertVC, animated: true)
 		}
 	}
+
+
+	 func add(childVC: UIViewController, to containerView: UIView) {
+		addChild(childVC)
+		containerView.addSubview(childVC.view)
+		childVC.view.frame = containerView.bounds
+		childVC.didMove(toParent: self)
+		containerView.layer.masksToBounds = true
+	}
 }

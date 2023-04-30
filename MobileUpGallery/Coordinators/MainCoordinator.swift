@@ -16,7 +16,7 @@ protocol Coordinator: AnyObject {
 	func presentLoginView()
 	func presentWebView()
 	func presentGallery(for user: User)
-	func presentPhotoScreen(for photo: Photo)
+	func presentPhotoScreen(for photo: Photo, photos: [Photo])
 }
 
 
@@ -60,8 +60,8 @@ final class MainCoordinator: Coordinator {
 	}
 
 
-	func presentPhotoScreen(for photo: Photo) {
-		let destVC = PhotoVC(photo: photo)
+	func presentPhotoScreen(for photo: Photo, photos: [Photo]) {
+		let destVC = PhotoVC(photo: photo, photos: photos)
 		navigationController.pushViewController(destVC, animated: true)
 	}
 }

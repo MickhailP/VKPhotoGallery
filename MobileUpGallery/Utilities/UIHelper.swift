@@ -11,6 +11,18 @@ import UIKit
 
 struct UIHelper {
 
+	static func createOneColumnHorizontalFlowLayout(in view: UIView) -> UICollectionViewFlowLayout {
+		let itemHeight = 54
+		let padding: CGFloat = 6
+
+		let flowLayout = UICollectionViewFlowLayout()
+		flowLayout.scrollDirection = .horizontal
+		flowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+		flowLayout.itemSize = CGSize(width: itemHeight, height: itemHeight)
+
+		return flowLayout
+	}
+
 	static func createTwoColumnFlowLayout(in view: UIView) -> UICollectionViewFlowLayout {
 		let width = view.frame.width
 		let padding: CGFloat = 10
@@ -24,4 +36,6 @@ struct UIHelper {
 
 		return flowLayout
 	}
+
+	
 }

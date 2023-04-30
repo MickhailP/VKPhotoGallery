@@ -11,15 +11,19 @@ import SnapKit
 
 final class PhotoVC: UIViewController {
 
-	let imageView = MUImageView(frame: .zero)
-	
-	private let photo: Photo
+	private let imageView = MUImageView(frame: .zero)
+	private let horizontalGallery = UIView()
 	private var initialImageWidth: CGFloat?
+	private let pinch = UIPinchGestureRecognizer()
 
-	let pinch = UIPinchGestureRecognizer()
 
-	init(photo: Photo) {
+	private let photo: Photo
+	private var photos: [Photo]
+
+
+	init(photo: Photo, photos: [Photo]) {
 		self.photo = photo
+		self.photos = photos
 		super.init(nibName: nil, bundle: nil)
 	}
 
@@ -31,24 +35,26 @@ final class PhotoVC: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		view.backgroundColor = .systemBackground
+
 		configureNavigation(date: photo.date.convertToDateFromUnix())
 		configureImageView(with: photo.photoUrl)
+		configureHorizontalGallery()
 
 		addPinchToZoom()
 	}
 
 
 	private func configureNavigation(date: Date) {
-		self.title = date.convertToDayMonthYearFormat()
-
-		view.backgroundColor = .systemBackground
+		title = date.convertToDayMonthYearFormat()
 
 		navigationController?.isNavigationBarHidden = false
 		navigationController?.navigationBar.prefersLargeTitles = false
 		navigationItem.titleView?.sizeToFit()
+		navigationItem.backButtonDisplayMode = .minimal
 
 		let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharePhoto))
-		self.navigationItem.rightBarButtonItem = shareButton
+		navigationItem.rightBarButtonItem = shareButton
 	}
 
 
@@ -71,10 +77,26 @@ final class PhotoVC: UIViewController {
 			make.centerY.equalToSuperview()
 		}
 	}
+
+
+	private func configureHorizontalGallery() {
+		view.addSubview(horizontalGallery)
+		horizontalGallery.translatesAutoresizingMaskIntoConstraints = false
+
+		let horizontalGalleryVC = HorizontalGalleryVC(viewModel: HorizontalGalleryViewModel(photos: photos, delegate: self))
+		
+		add(childVC: horizontalGalleryVC, to: horizontalGallery)
+
+		horizontalGallery.snp.makeConstraints { make in
+			make.leading.trailing.equalToSuperview()
+			make.bottom.equalTo(view.snp.bottom).inset(34)
+			make.height.equalTo(66)
+		}
+	}
 }
 
 
-//MARK: Activity screen
+//MARK: - Activity screen
 extension PhotoVC {
 
 	@objc func sharePhoto() {
@@ -94,7 +116,7 @@ extension PhotoVC {
 }
 
 
-//MARK: Pinch to Zoom
+//MARK: - Pinch to Zoom
 extension PhotoVC {
 
 	private func addPinchToZoom() {
@@ -108,5 +130,13 @@ extension PhotoVC {
 
 		gestureView.transform = gestureView.transform.scaledBy(x: pinch.scale, y: pinch.scale)
 		pinch.scale = 1
+	}
+}
+
+
+//MARK: - HorizontalGalleryDelegate
+extension PhotoVC: HorizontalGalleryDelegate {
+	func presentPhotoOnScreen(_ photo: UIImage) {
+		imageView.image = photo
 	}
 }

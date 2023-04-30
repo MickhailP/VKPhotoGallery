@@ -18,7 +18,6 @@ final class GalleryVC: CollectionVC {
 	init(coordinator: Coordinator, user: User, networkingManager: NetworkingManager) {
 		self.viewModel = GalleryVCViewModel(coordinator: coordinator, user: user, networkingManager: networkingManager)
 		super.init(nibName: nil, bundle: nil)
-		self.title = "MobileUP Gallery"
 	}
 
 
@@ -31,6 +30,18 @@ final class GalleryVC: CollectionVC {
 		super.viewDidLoad()
 		configureNavController()
 		requestPhotos()
+	}
+
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.title = "MobileUP Gallery"
+	}
+
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		self.navigationItem.title = " "
 	}
 
 
@@ -83,6 +94,6 @@ extension GalleryVC: UICollectionViewDelegate {
 
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let photo = viewModel.photos[indexPath.item]
-		viewModel.coordinator?.presentPhotoScreen(for: photo)
+		viewModel.coordinator?.presentPhotoScreen(for: photo, photos: viewModel.photos)
 	}
 }
