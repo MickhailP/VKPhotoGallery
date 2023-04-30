@@ -12,6 +12,7 @@ final class NetworkingManager {
 
 	private let cache = NSCache<NSString, UIImage>()
 
+	
 	func downloadDataResult(from url: URL?) async -> Result<Data,Error> {
 
 		guard let url = url else {
@@ -32,6 +33,7 @@ final class NetworkingManager {
 		}
 	}
 
+
 	func downloadImage(from url: String) async -> UIImage? {
 
 		if let cachedImage = self.cache.object(forKey: NSString(string: url)) {
@@ -43,6 +45,7 @@ final class NetworkingManager {
 
 		return nil
 	}
+
 
 	func fetchImage(from urlString: String) async -> UIImage? {
 		guard let url = URL(string: urlString) else   {

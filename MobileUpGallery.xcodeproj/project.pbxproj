@@ -166,8 +166,7 @@
 			children = (
 				D7BA105629FA5C0D00C2A233 /* LoginVC.swift */,
 				D71E248229FBD6900049A157 /* WebViewView */,
-				D74993C229FD08580091D507 /* GalleryVC.swift */,
-				D74993C629FD08C70091D507 /* GalleryVCViewModel.swift */,
+				D7F1BFAD29FE9DE200CCF783 /* GalelryScreen */,
 				D74993D029FD70760091D507 /* PhotoScreen */,
 			);
 			path = Screens;
@@ -326,6 +325,15 @@
 				D7F1BFAA29FE686200CCF783 /* HorizontalGalleryViewModel.swift */,
 			);
 			path = HorizontalGallery;
+			sourceTree = "<group>";
+		};
+		D7F1BFAD29FE9DE200CCF783 /* GalelryScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D74993C229FD08580091D507 /* GalleryVC.swift */,
+				D74993C629FD08C70091D507 /* GalleryVCViewModel.swift */,
+			);
+			path = GalelryScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
