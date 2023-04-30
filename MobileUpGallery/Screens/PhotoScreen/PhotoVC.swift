@@ -106,7 +106,7 @@ extension PhotoVC {
 
 	private func configureActivityVC() {
 		guard let image = imageView.image, image != Images.placeholder else {
-			presentAlertOnMainTread(title: "Error", message: ErrorMessage.imageIsEmpty.rawValue, buttonTitle: "Ok")
+			presentAlertOnMainTread(title: ErrorMessage.error.localised, message: ErrorMessage.imageIsEmpty.localised, buttonTitle: "Ok")
 			return
 		}
 

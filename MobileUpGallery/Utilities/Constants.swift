@@ -8,9 +8,7 @@
 import Foundation
 import UIKit
 
-enum ButtonLabels: String {
-	case loginButton = "Вход через VK"
-}
+
 
 
 struct LoginViewTitlePaddings {

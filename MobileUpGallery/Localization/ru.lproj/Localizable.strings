@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  MobileUpGallery
+
+  Created by Миша Перевозчиков on 30.04.2023.
+  
+*/
+"ButtonLabels_loginButton" = "Вход через VK";
+"ButtonLabels_logout" = "Выход";
+
+"ErrorMessage_error" = "Ошибка";
+"ErrorMessage_error" = "Неизветсная ошибка";
+
+"ErrorMessage_invalidResponse" = "Получен некорректный ответ от сервера.";
+"ErrorMessage_dataIsMissing" = "Данные отсутствуют.";
+"ErrorMessage_decodingError" = "Неверный формат данных.";
+"ErrorMessage_encodingError" = "Неверный формат данных.";
+"ErrorMessage_activeUserMissing" = "Активный пользователь отсутсвует";
+"ErrorMessage_authorisationError" = "Ошибка авторизации.";
+"ErrorMessage_imageIsEmpty" = "Изображение отсутвует.";
+"ErrorMessage_fetchingError" = "Данные не могут быть получены с сервера.";
+"ErrorMessage_tryAgain" = "Произошла ошибка попробуйте повторить запрос";
+"ErrorMessage_badURL" = "Неправильный URL";
+
+
+

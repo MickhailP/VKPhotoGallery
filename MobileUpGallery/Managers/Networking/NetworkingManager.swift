@@ -16,15 +16,12 @@ final class NetworkingManager {
 	func downloadDataResult(from url: URL?) async -> Result<Data,Error> {
 
 		guard let url = url else {
-			print("Failed to convert URLString")
 			return .failure( URLError(.badURL))
 		}
 
 		do {
 			let (data, response) = try await URLSession.shared.data(from: url)
 			try handleResponse(response)
-
-			print(data)
 			return .success(data)
 		} catch {
 			print(error)

@@ -76,11 +76,11 @@ final class WebViewVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
 			do {
 				try viewModel.showGalleryView()
 			} catch let error as ErrorMessage {
-				presentAlertOnMainTread(title: "Error", message: "Something went wrong: \(error.rawValue)", buttonTitle: "Ok") { [weak self] in
+				presentAlertOnMainTread(title: ErrorMessage.error.localised, message: error.localised, buttonTitle: "Ok") { [weak self] in
 					self?.presentingViewController?.dismiss(animated: true)
 				}
 			} catch {
-				presentAlertOnMainTread(title: "Unknown error", message: "Something went wrong\(#function)", buttonTitle: "Ok")
+				presentAlertOnMainTread(title: ErrorMessage.unknownError.localised, message: ErrorMessage.tryAgain.localised, buttonTitle: "Ok")
 			}
 		}
 	}
@@ -93,16 +93,19 @@ extension WebViewVC {
 
 	func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
 
-		guard let redirectURL = webView.url else { return }
+		guard let redirectURL = webView.url else {
+			presentAlertOnMainTread(title: ErrorMessage.error.localised, message: ErrorMessage.badURL.localised, buttonTitle: "Ok")
+			return
+		}
 
 		if viewModel.checkTargetPage(for: redirectURL) {
 			do {
 				try viewModel.authService.getUserDataFrom(url: redirectURL)
 				webView.stopLoading()
 			} catch let error as ErrorMessage {
-				presentAlertOnMainTread(title: "Authorisation error", message: "Something went wrong: \(error.rawValue)", buttonTitle: "Ok")
+				presentAlertOnMainTread(title: ErrorMessage.error.localised, message: error.localised, buttonTitle: "Ok")
 			} catch  {
-				presentAlertOnMainTread(title: "Unknown error", message: "Something went wrong", buttonTitle: "Ok")
+				presentAlertOnMainTread(title: ErrorMessage.unknownError.localised, message: ErrorMessage.tryAgain.localised, buttonTitle: "Ok")
 			}
 		}
 	}
