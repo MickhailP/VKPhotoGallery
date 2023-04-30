@@ -12,7 +12,7 @@ final class LoginVC: UIViewController, Coordinating {
 
 	var coordinator: Coordinator?
 
-	let loginButton = MUButton(backgroundColor: UIColor(named: "loginButtonColor") ?? .black, title: ButtonLabels.loginButton.rawValue)
+	let loginButton = MUButton(backgroundColor: CustomColors.loginButtonColor ?? .black, title: ButtonLabels.loginButton.rawValue)
 	let titleLabel = MUTitleLabel(textAlignment: .left, fontSize: 44)
 
 
@@ -55,7 +55,7 @@ final class LoginVC: UIViewController, Coordinating {
 	private func configureLoginButton() {
 		view.addSubview(loginButton)
 		loginButton.translatesAutoresizingMaskIntoConstraints = false
-		loginButton.setTitleColor(UIColor(named: "loginTitleColor"), for: .normal) 
+		loginButton.setTitleColor(CustomColors.loginTitleColor, for: .normal) 
 		loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
 
 		let padding: CGFloat = 14

@@ -10,6 +10,8 @@ import UIKit
 
 final class NetworkingManager {
 
+	private let cache = NSCache<NSString, UIImage>()
+
 	func downloadDataResult(from url: URL?) async -> Result<Data,Error> {
 
 		guard let url = url else {
@@ -28,6 +30,18 @@ final class NetworkingManager {
 			print("There was an error during data fetching! ", error.localizedDescription)
 			return .failure(error)
 		}
+	}
+
+	func downloadImage(from url: String) async -> UIImage? {
+
+		if let cachedImage = self.cache.object(forKey: NSString(string: url)) {
+			return cachedImage
+		} else if let fetchedImage = await fetchImage(from: url) {
+			self.cache.setObject(fetchedImage, forKey: NSString(string: url))
+			return fetchedImage
+		}
+
+		return nil
 	}
 
 	func fetchImage(from urlString: String) async -> UIImage? {

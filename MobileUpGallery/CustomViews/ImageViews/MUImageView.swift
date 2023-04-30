@@ -25,6 +25,7 @@ final class MUImageView: UIImageView {
 
 	private func configure() {
 		clipsToBounds = true
+		contentMode = .scaleAspectFill
 
 		if let placeholderImage {
 			image = placeholderImage
@@ -36,7 +37,7 @@ final class MUImageView: UIImageView {
 
 	func getImage(from url: String) {
 		Task {
-			if let image = await NetworkingManager().fetchImage(from: url) {
+			if let image = await NetworkingManager().downloadImage(from: url) {
 				await MainActor.run {
 					self.image = image
 				}

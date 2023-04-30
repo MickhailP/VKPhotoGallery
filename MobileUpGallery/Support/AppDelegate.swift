@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+		configureNavigationBarAppearance()
 		return true
 	}
 
@@ -26,6 +26,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
 		
+	}
+
+	func configureNavigationBarAppearance() {
+		let navBar = UINavigationBar()
+
+		UINavigationBar.appearance().tintColor = CustomColors.loginButtonColor
+
+		let standardAppearance = UINavigationBarAppearance()
+		standardAppearance.configureWithOpaqueBackground()
+
+		let compactAppearance = standardAppearance.copy()
+
+		navBar.standardAppearance = standardAppearance
+		navBar.scrollEdgeAppearance = standardAppearance
+		navBar.compactAppearance = compactAppearance
 	}
 }
 

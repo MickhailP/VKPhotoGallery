@@ -10,37 +10,38 @@ import UIKit
 import SnapKit
 
 
-final class GalleryVC: UIViewController, UICollectionViewDelegate {
+final class GalleryVC: CollectionVC {
 
 	let viewModel: GalleryVCViewModel
-
-	private var collectionView: UICollectionView!
-	private var dataSource: UICollectionViewDiffableDataSource<Section, Photo>!
-
-	enum Section {
-		case main
-	}
 
 
 	init(coordinator: Coordinator, user: User, networkingManager: NetworkingManager) {
 		self.viewModel = GalleryVCViewModel(coordinator: coordinator, user: user, networkingManager: networkingManager)
 		super.init(nibName: nil, bundle: nil)
-		self.title = "MobileUP Gallery"
 	}
+
 
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		view.backgroundColor = .systemBackground
-
 		configureNavController()
-		configureCollectionView()
 		requestPhotos()
-		configureDataSource()
+	}
 
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.title = "MobileUP Gallery"
+	}
+
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		self.navigationItem.title = " "
 	}
 
 
@@ -54,16 +55,15 @@ final class GalleryVC: UIViewController, UICollectionViewDelegate {
 		navigationController?.navigationBar.prefersLargeTitles = false
 
 		navigationItem.titleView?.sizeToFit()
-
-		self.navigationItem.setHidesBackButton(true, animated:true)
+		navigationItem.setHidesBackButton(true, animated:true)
 
 		let exitButton = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(exit))
-		exitButton.tintColor = .label
 		exitButton.customView?.sizeToFit()
 		self.navigationItem.rightBarButtonItem = exitButton
 	}
 
-	private func configureCollectionView() {
+
+	override func configureCollectionView() {
 		collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createTwoColumnFlowLayout(in: view))
 		collectionView.delegate = self
 		view.addSubview(collectionView)
@@ -79,34 +79,27 @@ final class GalleryVC: UIViewController, UICollectionViewDelegate {
 		}
 	}
 
+
 	func requestPhotos() {
-		viewModel.requestImages(ofOwner: VKAppID.albumOwner, fromAlbum: VKAppID.albumId) { [weak self] photos in
-			self?.updateData(with: photos)
+		viewModel.requestImages(ofOwner: VKAppID.albumOwner, fromAlbum: VKAppID.albumId) { [weak self] result in
+			guard let self else { return }
+
+			switch result {
+				case.success(let photos):
+					self.update(dataSource: self.viewModel.photos, with: photos)
+				case .failure(let error):
+					self.presentAlertOnMainTread(title: "Error", message: "The photos wasn't received. Error: \(error.rawValue)", buttonTitle: "Ok")
+			}
 		}
 	}
 }
 
 
-//MARK: - DataSource configuration
-extension GalleryVC {
+//MARK: - UICollectionViewDelegate
+extension GalleryVC: UICollectionViewDelegate {
 
-	func configureDataSource() {
-		dataSource = UICollectionViewDiffableDataSource<Section, Photo> (collectionView: collectionView, cellProvider: { collectionView, indexPath, photo in
-
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellsNames.photoCell, for: indexPath) as! PhotoCell
-
-			cell.set(photo: photo)
-			return cell
-		})
-	}
-
-	private func updateData(with photo: [Photo]) {
-		var snapshot = NSDiffableDataSourceSnapshot<Section, Photo> ()
-		snapshot.appendSections([.main])
-		snapshot.appendItems(viewModel.photos)
-
-		DispatchQueue.main.async {
-			self.dataSource.apply(snapshot)
-		}
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let photo = viewModel.photos[indexPath.item]
+		viewModel.coordinator?.presentPhotoScreen(for: photo, photos: viewModel.photos)
 	}
 }

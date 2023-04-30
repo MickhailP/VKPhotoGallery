@@ -14,4 +14,6 @@ enum ErrorMessage: String, Error {
 	case encodingError = "Data cannot be encoded"
 	case activeUserMissing = "Active user is missing"
 	case authorisationError = "Authorisation failed"
+	case imageIsEmpty = "The is no image to save"
+	case fetchingError = "The data hasn't been received"
 }
