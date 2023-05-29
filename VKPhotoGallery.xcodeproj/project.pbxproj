@@ -290,7 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				D7BA106829FA5E2700C2A233 /* README.md */,
-				D7BA105129FA5C0D00C2A233 /* MobileUpGallery */,
+				D7BA105129FA5C0D00C2A233 /* VKPhotoGallery */,
 				D7BA105029FA5C0D00C2A233 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D7BA105129FA5C0D00C2A233 /* MobileUpGallery */ = {
+		D7BA105129FA5C0D00C2A233 /* VKPhotoGallery */ = {
 			isa = PBXGroup;
 			children = (
 				D7BA106029FA5C1000C2A233 /* Info.plist */,
@@ -318,7 +318,7 @@
 				D74993B429FBFBFB0091D507 /* Extensions */,
 				D7F1BFAE29FEA28B00CCF783 /* Localization */,
 			);
-			path = MobileUpGallery;
+			path = VKPhotoGallery;
 			sourceTree = "<group>";
 		};
 		D7F1BFAC29FE687B00CCF783 /* HorizontalGallery */ = {
@@ -614,7 +614,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 95D5HHTHLU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MobileUpGallery/Info.plist;
+				INFOPLIST_FILE = VKPhotoGallery/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Разрешение необходимо для сохранеия фотографии.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = NO;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -626,7 +626,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MichailDev.MobileUpGallery;
+				PRODUCT_BUNDLE_IDENTIFIER = MichailDev.VKPhotoGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -646,7 +646,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 95D5HHTHLU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MobileUpGallery/Info.plist;
+				INFOPLIST_FILE = VKPhotoGallery/Info.plist;
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Разрешение необходимо для сохранеия фотографии.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = NO;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -658,7 +658,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MichailDev.MobileUpGallery;
+				PRODUCT_BUNDLE_IDENTIFIER = MichailDev.VKPhotoGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
