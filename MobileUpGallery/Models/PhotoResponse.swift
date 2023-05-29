@@ -1,6 +1,6 @@
 //
 //  PhotoResponse.swift
-//  MobileUpGallery
+//  VKPhotoGallery
 //
 //  Created by Миша Перевозчиков on 29.04.2023.
 //

@@ -82,7 +82,7 @@
 		D74993CB29FD15EE0091D507 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		D74993CE29FD175C0091D507 /* MUImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUImageView.swift; sourceTree = "<group>"; };
 		D74993D129FD70CE0091D507 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
-		D7BA104F29FA5C0D00C2A233 /* MobileUpGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileUpGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BA104F29FA5C0D00C2A233 /* VKPhotoGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKPhotoGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BA105229FA5C0D00C2A233 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7BA105429FA5C0D00C2A233 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D7BA105629FA5C0D00C2A233 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 		D7BA105029FA5C0D00C2A233 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D7BA104F29FA5C0D00C2A233 /* MobileUpGallery.app */,
+				D7BA104F29FA5C0D00C2A233 /* VKPhotoGallery.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -351,9 +351,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D7BA104E29FA5C0D00C2A233 /* MobileUpGallery */ = {
+		D7BA104E29FA5C0D00C2A233 /* VKPhotoGallery */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D7BA106329FA5C1000C2A233 /* Build configuration list for PBXNativeTarget "MobileUpGallery" */;
+			buildConfigurationList = D7BA106329FA5C1000C2A233 /* Build configuration list for PBXNativeTarget "VKPhotoGallery" */;
 			buildPhases = (
 				D7BA104B29FA5C0D00C2A233 /* Sources */,
 				D7BA104C29FA5C0D00C2A233 /* Frameworks */,
@@ -363,12 +363,12 @@
 			);
 			dependencies = (
 			);
-			name = MobileUpGallery;
+			name = VKPhotoGallery;
 			packageProductDependencies = (
 				D71E246129FA61FC0049A157 /* SnapKit */,
 			);
 			productName = MobileUpGallery;
-			productReference = D7BA104F29FA5C0D00C2A233 /* MobileUpGallery.app */;
+			productReference = D7BA104F29FA5C0D00C2A233 /* VKPhotoGallery.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -386,7 +386,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D7BA104A29FA5C0D00C2A233 /* Build configuration list for PBXProject "MobileUpGallery" */;
+			buildConfigurationList = D7BA104A29FA5C0D00C2A233 /* Build configuration list for PBXProject "VKPhotoGallery" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -403,7 +403,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D7BA104E29FA5C0D00C2A233 /* MobileUpGallery */,
+				D7BA104E29FA5C0D00C2A233 /* VKPhotoGallery */,
 			);
 		};
 /* End PBXProject section */
@@ -672,7 +672,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D7BA104A29FA5C0D00C2A233 /* Build configuration list for PBXProject "MobileUpGallery" */ = {
+		D7BA104A29FA5C0D00C2A233 /* Build configuration list for PBXProject "VKPhotoGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D7BA106129FA5C1000C2A233 /* Debug */,
@@ -681,7 +681,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D7BA106329FA5C1000C2A233 /* Build configuration list for PBXNativeTarget "MobileUpGallery" */ = {
+		D7BA106329FA5C1000C2A233 /* Build configuration list for PBXNativeTarget "VKPhotoGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D7BA106429FA5C1000C2A233 /* Debug */,
